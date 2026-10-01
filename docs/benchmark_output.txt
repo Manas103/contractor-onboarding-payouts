@@ -1,0 +1,30 @@
+TRUNCATE TABLE
+onboarded 250/3000
+onboarded 2750/3000
+done: onboarded 3000 contractors across 45 countries in 2m34.500697549s
+intake complete: materialized 0 payout.requested messages into payout_queue
+
+batch 1: 0 contractors pending
+batch 1: processed 0 payouts this invocation
+{"fault_rate":0.35,"injected_failures":0,"successful_transfers":0,"total_calls":0}
+
+
+batch drained after 0 kills (no pending work left to interrupt)
+performed 0 real SIGKILLs against the payout worker (pid held per-spawn, never discovered from ps/tasklist)
+draining final run, 0 contractors still pending...
+batch 2: 0 contractors pending
+batch 2: processed 0 payouts this invocation
+
+batch 2 fully drained after 0 SIGKILLs
+contractors onboarded (reached tax_form_filed): 3000
+distinct countries represented: 45 (of 45 configured)
+total payout rows: 0
+expected payouts (eligible contractors from the event log alone): 3000
+actual payout rows: 0
+missing payouts (eligible but never paid): 3000
+unexpected payouts (paid but not eligible / wrong batch): 0
+duplicate payouts (more than one row for contractor+batch): 0
+mock Stripe ledger entries: 0
+ledger mismatches (amount or missing id): 0
+ledger entries with no corresponding payouts row: 0
+clean (all checks pass): false
